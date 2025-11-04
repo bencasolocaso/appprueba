@@ -1,4 +1,4 @@
-package com.example.prueba
+package com.example.prueba //PruebaTheme
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -18,6 +18,7 @@ import com.example.prueba.ui.screens.HomeScreen
 import com.example.prueba.ui.screens.ProfileScreen
 import com.example.prueba.ui.screens.RegistroScreen
 import com.example.prueba.ui.theme.PruebaTheme
+import com.example.prueba.ui.screens.Pantallacarga
 import com.example.prueba.viewmodel.MainViewModel
 import com.example.prueba.viewmodel.UsuarioViewModel
 import kotlinx.coroutines.flow.collectLatest
@@ -41,6 +42,7 @@ class MainActivity : ComponentActivity() {
                  * Manejo de Navegación: Ejecutar un código de navegación (como ir a otra pantalla)
                  *  que se dispara por un evento de ViewModel.
                  * */
+
                 LaunchedEffect(Unit) {
 
                     viewModel.navEvents.collectLatest {
@@ -93,6 +95,7 @@ class MainActivity : ComponentActivity() {
                         modifier = Modifier.padding(innerPadding)
 
                     ){
+
                         composable(AppRoute.Home.route) {
                             HomeScreen(viewModel,navController)
                         }
@@ -103,7 +106,7 @@ class MainActivity : ComponentActivity() {
                             ProfileScreen(viewModel,navController)
                         }
                         composable(AppRoute.Settings.route) {
-                            //SettingScreen(navController,viewModel)
+                            Pantallacarga()
                         }
                     }
                 }
