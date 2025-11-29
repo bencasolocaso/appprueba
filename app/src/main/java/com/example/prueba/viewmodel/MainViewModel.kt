@@ -10,6 +10,7 @@ import kotlinx.coroutines.launch
 import com.example.prueba.navigation.AppRoute
 import com.example.prueba.navigation.NavigationEvent
 
+
 class MainViewModel: ViewModel() {
 
 

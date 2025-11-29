@@ -115,6 +115,21 @@ fun RegistroScreen(
 
 
                 )
+                OutlinedTextField(
+                    value = estado.paises,
+                    onValueChange = viewModel::onPaisesChange,
+                    label = {Text("pais")},
+                    isError = estado.errores.paises!=null,
+                    singleLine = true,
+                    supportingText = {
+                        estado.errores.paises?.let {
+                            Text(it, color = MaterialTheme.colorScheme.error)
+                        }
+                    },
+                    modifier = Modifier.fillMaxWidth()
+                )
+
+
 
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Checkbox(

@@ -32,6 +32,9 @@ class UsuarioViewModel: ViewModel() {
     fun onDireccionChange(nuevaDireccion:String){
         _estado.update { it.copy(direccion = nuevaDireccion, errores = it.errores.copy(direccion =null)) }
     }
+    fun onPaisesChange(nuevoPais: String){
+        _estado.update { it.copy(paises = nuevoPais, errores = it.errores.copy(paises = null)) }
+    }
 
     fun onAceptarTerminosChange(nuevoAceptarTerminos: Boolean){
         _estado.update { it.copy(aceptaTerminos = nuevoAceptarTerminos) }
@@ -47,6 +50,7 @@ class UsuarioViewModel: ViewModel() {
             correo = if(!Patterns.EMAIL_ADDRESS.matcher(formularioActual.correo).matches()) "El correo debe ser valido" else null,
             contrasena= if(formularioActual.contrasena.length <6)"La contraseña debe tener al menos 6 caracteres" else null,
             direccion = if(formularioActual.direccion.isBlank()) "El campo es obligatorio" else null,
+            paises = if(formularioActual.paises.isBlank())"el campo es obligatorio" else null
         )
 
         //listOfNotNull retorna una lista de los elementos que "no sean nulos"
@@ -54,7 +58,8 @@ class UsuarioViewModel: ViewModel() {
             errores.nombre,
             errores.correo,
             errores.contrasena,
-            errores.direccion
+            errores.direccion,
+            errores.paises
         ).isNotEmpty()//retorna true si la coleccion no esta vacia
 
         _estado.update { it.copy(errores=errores) }

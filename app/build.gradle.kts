@@ -62,7 +62,6 @@ dependencies {
     implementation("androidx.room:room-runtime:$room_version")
     implementation("androidx.room:room-ktx:$room_version")
     ksp("androidx.room:room-compiler:$room_version")
-    ksp("androidx.room:room-compiler:$room_version")
 
     // Dependencia Hilt
     implementation("com.google.dagger:hilt-android:2.57.1")
@@ -81,4 +80,10 @@ dependencies {
     // Compose Material
     implementation("androidx.compose.material:material-icons-extended")
     implementation("io.coil-kt:coil-compose:2.7.0")
+
+    //jetpac
+    implementation("androidx.activity:activity-compose:1.12.0")
+    implementation("androidx.compose.material3:material3:1.4.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0")
+    //retro
 }

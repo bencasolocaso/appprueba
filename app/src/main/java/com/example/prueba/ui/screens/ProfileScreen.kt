@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -68,6 +69,9 @@ fun ProfileScreen(
         )
         {
             Text("Bienvenido al Perfil")
+            Button(onClick = {viewModel.navigateTo(AppRoute.Home)}) {
+                Text("volver al home")
+            }
         }
 
     }

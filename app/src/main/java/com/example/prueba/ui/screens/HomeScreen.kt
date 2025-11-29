@@ -86,8 +86,8 @@ fun HomeScreen(
             ){
                 Text("Bienvenido a la página  de Inicio")
                 Spacer(modifier=Modifier.height(16.dp))
-                Button(onClick = {viewModel.navigateTo(AppRoute.Settings)}) {
-
+                Button(onClick = {viewModel.navigateTo(AppRoute.Profile)}) {
+                 Text("ir al perfil")
                 }
 
 

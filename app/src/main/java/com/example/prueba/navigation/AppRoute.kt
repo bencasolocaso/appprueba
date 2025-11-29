@@ -2,7 +2,7 @@ package com.example.prueba.navigation
 
 sealed class AppRoute(val route:String) {
 
-    data object PantallaEstado: AppRoute("pantalla_estado")
+
     data object Home:AppRoute("home")
     data object Register: AppRoute("register")
     data object Profile: AppRoute("profile")

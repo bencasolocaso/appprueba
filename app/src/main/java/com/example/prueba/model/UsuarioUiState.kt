@@ -6,7 +6,8 @@ data class UsuarioUiState(
     val contrasena: String="",
     val direccion: String="",
     val aceptaTerminos: Boolean=false,
-    val errores: UsuarioErrores= UsuarioErrores()
+    val errores: UsuarioErrores= UsuarioErrores(),
+    val paises: String=""
 
 )
 
@@ -14,4 +15,7 @@ data class UsuarioErrores(
     val nombre: String?=null,
     val correo: String?=null,
     val contrasena: String?=null,
-    val direccion: String? =null)
+    val direccion: String? =null,
+    val paises: String?=null
+
+)
