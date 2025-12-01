@@ -54,6 +54,13 @@ fun HomeScreen(
                         viewModel.navigateTo(AppRoute.Profile)
                     }
                 )
+                NavigationDrawerItem(
+                    label = {Text("Ir a Post")},
+                    selected = false,
+                    onClick = {
+                        scope.launch { drawerState.close() }
+                        viewModel.navigateTo(AppRoute.Post)
+                    })
 
             }
         }

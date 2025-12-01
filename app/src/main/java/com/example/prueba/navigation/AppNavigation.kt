@@ -11,11 +11,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.prueba.ui.screens.HomeScreen
+import com.example.prueba.ui.screens.PostScreen
 import com.example.prueba.ui.screens.ProfileScreen
 import com.example.prueba.ui.screens.RegistroScreen
 import com.example.prueba.viewmodel.MainViewModel
+import com.example.prueba.viewmodel.PostViewModel
 import com.example.prueba.viewmodel.UsuarioViewModel
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
 
 @Composable
@@ -23,6 +24,8 @@ fun AppNavegation( viewModel: MainViewModel = viewModel() ){
     val viewModel: MainViewModel= viewModel()
     val viewModelRegistro: UsuarioViewModel=viewModel()
     val navController = rememberNavController()
+    val viewmodel : PostViewModel = viewModel()
+
 
     /**La función LaunchedEffect en Jetpack Compose se usa para ejecutar
      * efectos secundarios (side effects) en un entorno seguro y
@@ -97,6 +100,10 @@ fun AppNavegation( viewModel: MainViewModel = viewModel() ){
             composable(AppRoute.Profile.route) {
                 ProfileScreen(viewModel,navController)
             }
+            composable(AppRoute.Post.route) {
+                PostScreen(viewmodel,navController)
+            }
+
 
         }
     }
