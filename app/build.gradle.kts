@@ -91,4 +91,23 @@ dependencies {
     //corutinas
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")
 
+    //testeo
+
+    //kotest
+    testImplementation("io.kotest:kotest-runner-junit5:6.0.7")
+    testImplementation("io.kotest:kotest-assertions-core:6.0.7")
+    //Junit5
+    testImplementation("org.junit.jupiter:junit-jupiter:6.0.1")
+    //mockK
+    testImplementation("io.mockk:mockk:1.14.6")
+    //compose ui test
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.9.5")
+    debugImplementation("androidx.compose.ui:ui-test-manifest:1.9.5")
+
+
+
+    //para usar junit5
+    tasks.withType<Test>().configureEach {
+        useJUnitPlatform()
+    }
 }

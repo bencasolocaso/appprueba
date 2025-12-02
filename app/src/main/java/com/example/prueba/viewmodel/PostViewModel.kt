@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 
-class PostViewModel : ViewModel() {
+open class PostViewModel : ViewModel() {
     private val repository = PostRepository()
     private val _PostList = MutableStateFlow<List<Post>>(emptyList())
     val PostList: StateFlow<List<Post>> = _PostList
@@ -17,7 +17,7 @@ class PostViewModel : ViewModel() {
     init {
         fetchPosts()
     }
-    private fun fetchPosts() {
+    open fun fetchPosts() {
         viewModelScope.launch {
             try {
                 _PostList.value= repository.getPosts()
